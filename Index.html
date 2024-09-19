@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu wyboru</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .menu {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .menu button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu .store {
+            background-color: #28a745;
+        }
+        .menu .pacman {
+            background-color: #007bff;
+        }
+        .content {
+            display: none;
+        }
+        #gameArea {
+            display: block;
+            margin: auto;
+            width: 80%;
+            height: 500px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <button class="store">Sklep</button>
+        <button class="pacman">Pac-Man</button>
+    </div>
+
+    <div id="storeContent" class="content">
+        <title>Flipper 0 (PSC) - Sklep</title>
+        <style>
+            /* Skopiuj style ze swojego kodu dla sklepu */
+        </style>
+        <div class="header">
+            <img src="icon.png" alt="Ikona sklepu">
+            <h1>Flipper 0 (PSC)</h1>
+        </div>
+        <div class="container">
+            <div class="form-container">
+                <h1>Zakup Flipper Zero</h1>
+                <p><strong>Uwaga:</strong> Kurier i paczkomat są za darmo.</p>
+                <img src="P1.png" alt="Flipper Zero">
+                <form id="orderForm">
+                    <!-- Formularz sklepu -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameContent" class="content">
+        <title>Pac-Man</title>
+        <link rel="icon" href="media/icon.png" type="image/png">
+        <link rel="stylesheet" href="styles.css">
+        <div id="gameArea"></div>
+        <script src="script.js"></script>
+    </div>
+
+    <script>
+        document.querySelector('.store').addEventListener('click', function() {
+            document.getElementById('storeContent').style.display = 'block';
+            document.getElementById('gameContent').style.display = 'none';
+        });
+
+        document.querySelector('.pacman').addEventListener('click', function() {
+            document.getElementById('storeContent').style.display = 'none';
+            document.getElementById('gameContent').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
